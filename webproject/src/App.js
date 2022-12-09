@@ -12,6 +12,7 @@ import Gallery from './screens/Gallery';
 import Study from './screens/Study';
 import Member from './screens/Member';
 import Staff from './screens/Staff';
+import Join from './screens/JoinForm';
 import { useState } from 'react';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
     color: 'black',
     fontWeight: 700,
   };
+  
 
   return (
     <Router>
@@ -26,16 +28,16 @@ function App() {
         <header className="App-header">
           <Link to = "/"><img src={logo} className="darak-logo" alt="logo"/></Link>
         <nav className="index">
-          <div className="calendar-wrap">
-            <NavLink to = "/Calendar" style={({isActive}) => (isActive ? activeStyle: {color: 'black'})}>
+          <NavLink to = "/JoinForm" style={({isActive}) => (isActive ? activeStyle: {color: 'black'})}>
+            <div className="calendar-wrap">
               <div className="calendar-image">
                 <img src={index1} alt="calendar" width={160}/>
               </div>
               <div className="calendar-text">
                 <p className='clendar'>캘린더</p>
-              </div>              
-            </NavLink>
-          </div>
+              </div>             
+            </div>
+          </NavLink>
           <div className="gallery-wrap">
             <NavLink to = "/Gallery" style={({isActive}) => (isActive ? activeStyle: {color: 'black'})}>
               <div className="gallery-image">
@@ -83,7 +85,7 @@ function App() {
           <div className="board">
             <Routes>
               <Route path = "/" element = { <Home />} />
-              <Route path = "/Calendar" element = { <Calendar />} />
+              <Route path = "/JoinForm" element = { <Join />} />
               <Route path = "/Gallery" element = { <Gallery />} />
               <Route path = "/Study" element = { <Study />} />
               <Route path = "/Member" element = { <Member />} />
